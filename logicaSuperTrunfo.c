@@ -31,53 +31,60 @@ int main() {
     // utilizando a função scanf para capturar as entradas.
     // utilize o código do primeiro desafio
 
-        // Entrada de dados da carta 1
-        printf("Cadastro da Carta 1:\n");
-        printf("Informe o estado (A a H): ");
-        scanf(" %c", &estado1);
+    // Entrada de dados da carta 1
+    printf("Cadastro da Carta 1:\n");
+    printf("Informe o estado (A a H): ");
+    scanf(" %c", &estado1);
     
-        printf("Informe o código da carta (ex: A01): ");
-        scanf("%s", codigo1);
+    printf("Informe o código da carta (ex: A01): ");
+    scanf("%s", codigo1);
     
-        printf("Informe o nome da cidade: ");
-        scanf(" %[^\n]", nomeCidade1);
+    printf("Informe o nome da cidade: ");
+    scanf(" %[^\n]", nomeCidade1);
     
-        printf("Informe a população da cidade: ");
-        scanf("%d", &populacao1);
+    printf("Informe a população da cidade: ");
+    scanf("%d", &populacao1);
     
-        printf("Informe a área da cidade (em km²): ");
-        scanf("%f", &area1);
+    printf("Informe a área da cidade (em km²): ");
+    scanf("%f", &area1);
     
-        printf("Informe o PIB da cidade (em bilhões de reais): ");
-        scanf("%f", &pib1);
+    printf("Informe o PIB da cidade (em bilhões de reais): ");
+    scanf("%f", &pib1);
     
-        printf("Informe o número de pontos turísticos: ");
-        scanf("%d", &pontosTuristicos1);
+    printf("Informe o número de pontos turísticos: ");
+    scanf("%d", &pontosTuristicos1);
     
-        // Entrada de dados da carta 2
-        printf("\nCadastro da Carta 2:\n");
-        printf("Informe o estado (A a H): ");
-        scanf(" %c", &estado2);
+    // Entrada de dados da carta 2
+    printf("\nCadastro da Carta 2:\n");
+    printf("Informe o estado (A a H): ");
+    scanf(" %c", &estado2);
     
-        printf("Informe o código da carta (ex: B02): ");
-        scanf("%s", codigo2);
+    printf("Informe o código da carta (ex: B02): ");
+    scanf("%s", codigo2);
     
-        printf("Informe o nome da cidade: ");
-        scanf(" %[^\n]", nomeCidade2);
+    printf("Informe o nome da cidade: ");
+    scanf(" %[^\n]", nomeCidade2);
     
-        printf("Informe a população da cidade: ");
-        scanf("%d", &populacao2);
+    printf("Informe a população da cidade: ");
+    scanf("%d", &populacao2);
     
-        printf("Informe a área da cidade (em km²): ");
-        scanf("%f", &area2);
+    printf("Informe a área da cidade (em km²): ");
+    scanf("%f", &area2);
     
-        printf("Informe o PIB da cidade (em bilhões de reais): ");
-        scanf("%f", &pib2);
+    printf("Informe o PIB da cidade (em bilhões de reais): ");
+    scanf("%f", &pib2);
     
-        printf("Informe o número de pontos turísticos: ");
-        scanf("%d", &pontosTuristicos2);
+    printf("Informe o número de pontos turísticos: ");
+    scanf("%d", &pontosTuristicos2);
 
-        // Exibição dos dados da carta 1
+    // Cálculo da densidade populacional e PIB per capita (em reais)
+    float densidade1 = populacao1 / area1;
+    float pibPerCapita1 = (pib1 * 1000000000) / populacao1;
+
+    float densidade2 = populacao2 / area2;
+    float pibPerCapita2 = (pib2 * 1000000000) / populacao2;
+
+    // Exibição dos dados da carta 1
     printf("\nCarta 1:\n");
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
@@ -86,6 +93,8 @@ int main() {
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
     // Exibição dos dados da carta 2
     printf("\nCarta 2:\n");
@@ -96,10 +105,8 @@ int main() {
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos2);
-
-    
-
- 
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
     return 0;
 }
