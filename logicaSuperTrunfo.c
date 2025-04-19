@@ -1,13 +1,9 @@
 #include <stdio.h>
-
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+#include <locale.h>
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+
+    setlocale(LC_ALL, "portuguese");
     // Declaração das variáveis para a carta 1
     char estado1;
     char codigo1[4];
@@ -25,55 +21,51 @@ int main() {
     float area2;
     float pib2;
     int pontosTuristicos2;
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
 
     // Entrada de dados da carta 1
     printf("Cadastro da Carta 1:\n");
     printf("Informe o estado (A a H): ");
     scanf(" %c", &estado1);
-    
+
     printf("Informe o código da carta (ex: A01): ");
     scanf("%s", codigo1);
-    
+
     printf("Informe o nome da cidade: ");
     scanf(" %[^\n]", nomeCidade1);
-    
+
     printf("Informe a população da cidade: ");
     scanf("%d", &populacao1);
-    
+
     printf("Informe a área da cidade (em km²): ");
     scanf("%f", &area1);
-    
+
     printf("Informe o PIB da cidade (em bilhões de reais): ");
     scanf("%f", &pib1);
-    
+
     printf("Informe o número de pontos turísticos: ");
     scanf("%d", &pontosTuristicos1);
-    
+
+
     // Entrada de dados da carta 2
     printf("\nCadastro da Carta 2:\n");
     printf("Informe o estado (A a H): ");
     scanf(" %c", &estado2);
-    
+
     printf("Informe o código da carta (ex: B02): ");
     scanf("%s", codigo2);
-    
+
     printf("Informe o nome da cidade: ");
     scanf(" %[^\n]", nomeCidade2);
-    
+
     printf("Informe a população da cidade: ");
     scanf("%d", &populacao2);
-    
+
     printf("Informe a área da cidade (em km²): ");
     scanf("%f", &area2);
-    
+
     printf("Informe o PIB da cidade (em bilhões de reais): ");
     scanf("%f", &pib2);
-    
+
     printf("Informe o número de pontos turísticos: ");
     scanf("%d", &pontosTuristicos2);
 
@@ -83,6 +75,7 @@ int main() {
 
     float densidade2 = populacao2 / area2;
     float pibPerCapita2 = (pib2 * 1000000000) / populacao2;
+
 
     // Exibição dos dados da carta 1
     printf("\nCarta 1:\n");
@@ -106,7 +99,28 @@ int main() {
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
-    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2 );
+
+
+
+    // comparação das cartas (exemplo : base
+    printf("Comparação das cartas (Atributo População):");
+
+    if (populacao1 > populacao2){
+        printf("\n Carta 1 - %s" ,nomeCidade1);
+        printf(" População: %d", populacao1);
+        printf("\n Carta 2 - %s" ,nomeCidade2);
+        printf(" População: %d", populacao2);
+        printf("\n Resultado Carta 1 - %s" ,nomeCidade1);
+        printf(" Venceu!");
+    }else{
+        printf("\n Carta 1 - %s" ,nomeCidade1);
+        printf(" População: %d", populacao1);
+        printf("\n Carta 2 - %s" ,nomeCidade2);
+        printf(" População: %d", populacao2);
+        printf("\n Resultado Carta 2 - %s" ,nomeCidade2);
+        printf(" Venceu!");
+    }
 
     return 0;
 }
